@@ -9,6 +9,8 @@ class NewsCache extends Model
 {
     use HasFactory;
 
+    protected $table = 'news_cache';
+
     protected $fillable = [
         'country_id', 'title', 'description', 'url', 'source',
         'category', 'sentiment', 'positive_score', 'negative_score',
