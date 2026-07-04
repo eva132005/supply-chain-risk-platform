@@ -35,3 +35,5 @@ Route::get('/ports', [PortController::class, 'index']);
 // Risk
 Route::get('/risk', [RiskController::class, 'index']);
 Route::get('/risk/{code}', [RiskController::class, 'show']);
+Route::post('/risk/calculate/{code}', [RiskController::class, 'calculate']);
+Route::post('/risk/calculate-all', [RiskController::class, 'calculateAll']);
