@@ -31,6 +31,13 @@
         #map { height: 400px; border-radius: 12px; }
         .risk-bar { height: 8px; border-radius: 4px; background-color: #2a2d3e; }
         .risk-bar-fill { height: 100%; border-radius: 4px; }
+        .card-body { color: #e0e0e0; }
+        .card p { color: #e0e0e0; }
+        h1, h2, h3, h4, h5, h6 { color: #e0e0e0; }
+        p { color: #e0e0e0; }
+        small { color: #9e9e9e; }
+        .text-muted { color: #9e9e9e !important; }
+        th, td { color: #e0e0e0 !important; }
     </style>
 
     @stack('styles')
