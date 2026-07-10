@@ -93,8 +93,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('watchlist') ? 'active' : '' }}" href="{{ route('watchlist') }}">
-                        <i class="bi bi-star me-2"></i> Watchlist
+    <a class="nav-link {{ request()->routeIs('visualization') ? 'active' : '' }}" href="{{ route('visualization') }}">
+        <i class="bi bi-graph-up me-2"></i> Data Visualization
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('watchlist') ? 'active' : '' }}" href="{{ route('watchlist') }}">
+        <i class="bi bi-star me-2"></i> Watchlist
+    </a>
+</li>
                     </a>
                 </li>
             </ul>

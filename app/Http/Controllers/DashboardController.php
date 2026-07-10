@@ -69,9 +69,14 @@ class DashboardController extends Controller
         return view('comparison', compact('countries'));
     }
 
-    public function watchlist()
+ public function watchlist()
     {
         $countries = Country::orderBy('name')->get();
         return view('watchlist', compact('countries'));
+    }
+
+    public function visualization()
+    {
+        return view('visualization');
     }
 }
