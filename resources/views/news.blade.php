@@ -92,11 +92,10 @@
                         </span>
                     </div>
                     <h6 class="mb-2">
-                        <a href="{{ $article->url }}" target="_blank" style="color: #e0e0e0; text-decoration: none;">
-                            {{ Str::limit($article->title, 100) }}
+    <a href="{{ $article->url }}" target="_blank" style="color: #1E2D4C; text-decoration: none;">
                         </a>
                     </h6>
-                    <p class="text-muted mb-2" style="font-size: 0.85rem;">{{ Str::limit($article->description, 120) }}</p>
+                    <p style="font-size: 0.85rem; color: #1E2D4C;">{{ Str::limit($article->description, 120) }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <small class="text-muted">
                             <i class="bi bi-globe2"></i> {{ $article->country->name ?? 'Global' }}
@@ -126,7 +125,7 @@
 @push('styles')
 <style>
 .pagination .page-link { background-color: #252836; border-color: #2a2d3e; color: #e0e0e0; }
-.pagination .page-item.active .page-link { background-color: #4fc3f7; border-color: #4fc3f7; color: #0f1117; }
+.pagination .page-item.active .page-link { background-color: #4A4A4A; border-color: #4A4A4A; color: #0f1117; }
 </style>
 @endpush
 

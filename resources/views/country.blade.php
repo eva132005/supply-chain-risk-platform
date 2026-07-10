@@ -7,10 +7,10 @@
     <!-- Header -->
     <div class="row mb-4">
         <div class="col-12">
-            <a href="{{ route('dashboard') }}" style="color: #4fc3f7; text-decoration: none;">
+            <a href="{{ route('dashboard') }}" style="color: #4A4A4A; text-decoration: none;">
                 <i class="bi bi-arrow-left"></i> Back to Dashboard
             </a>
-            <h2 class="mt-2" style="color: #4fc3f7;">
+            <h2 class="mt-2" style="color: #4A4A4A;">
                 <i class="bi bi-globe2"></i> {{ $country->name }}
                 <small class="text-muted fs-6">{{ $country->code }} | {{ $country->region }}</small>
             </h2>
@@ -50,7 +50,7 @@
         <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-shield-check"></i> Risk Score</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-shield-check"></i> Risk Score</h5>
                 </div>
                 <div class="card-body">
                     @php $risk = $country->riskScores->first(); @endphp
@@ -89,7 +89,7 @@
                         </div>
                     @else
                         <p class="text-muted text-center">Belum ada risk score</p>
-                        <button class="btn btn-sm w-100" style="background-color: #4fc3f7; color: #0f1117;" onclick="calculateRisk('{{ $country->code }}')">
+                        <button class="btn btn-sm w-100" style="background-color: #4A4A4A; color: #0f1117;" onclick="calculateRisk('{{ $country->code }}')">
                             <i class="bi bi-calculator"></i> Hitung Risk Score
                         </button>
                     @endif
@@ -101,7 +101,7 @@
         <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-cloud-sun"></i> Weather Data</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-cloud-sun"></i> Weather Data</h5>
                 </div>
                 <div class="card-body">
                     @php $weather = $country->weatherData->first(); @endphp
@@ -113,9 +113,9 @@
                                 <h4 style="color: #ffa726;">{{ $weather->temperature }}°C</h4>
                             </div>
                             <div class="col-6 mb-3">
-                                <i class="bi bi-cloud-rain" style="font-size: 1.5rem; color: #4fc3f7;"></i>
+                                <i class="bi bi-cloud-rain" style="font-size: 1.5rem; color: #4A4A4A;"></i>
                                 <p class="mb-0 mt-1">Rainfall</p>
-                                <h4 style="color: #4fc3f7;">{{ $weather->rainfall }} mm</h4>
+                                <h4 style="color: #4A4A4A;">{{ $weather->rainfall }} mm</h4>
                             </div>
                             <div class="col-6 mb-3">
                                 <i class="bi bi-wind" style="font-size: 1.5rem; color: #66bb6a;"></i>
@@ -140,7 +140,7 @@
         <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-graph-up"></i> Economic Data</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-graph-up"></i> Economic Data</h5>
                 </div>
                 <div class="card-body">
                     @php $economic = $country->economicData->first(); @endphp
@@ -181,14 +181,14 @@
         <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-currency-dollar"></i> Exchange Rate</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-currency-dollar"></i> Exchange Rate</h5>
                 </div>
                 <div class="card-body">
                     @php $rate = $country->exchangeRates->first(); @endphp
                     @if($rate)
                         <div class="text-center">
                             <p class="text-muted">1 USD =</p>
-                            <h2 style="color: #4fc3f7;">{{ number_format($rate->rate, 2) }}</h2>
+                            <h2 style="color: #4A4A4A;">{{ number_format($rate->rate, 2) }}</h2>
                             <h5>{{ $rate->target_currency }}</h5>
                         </div>
                     @else
@@ -202,7 +202,7 @@
         <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-newspaper"></i> Latest News</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-newspaper"></i> Latest News</h5>
                 </div>
                 <div class="card-body p-0">
                     @forelse($country->newsCache as $news)

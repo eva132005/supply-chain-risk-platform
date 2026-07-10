@@ -7,7 +7,7 @@
     <!-- Header -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2 style="color: #4fc3f7;"><i class="bi bi-star"></i> Favorite Monitoring List</h2>
+            <h2 style="color: #4A4A4A;"><i class="bi bi-star"></i> Favorite Monitoring List</h2>
             <p class="text-muted">Monitor your favorite countries</p>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-plus-circle"></i> Add Country to Watchlist</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-plus-circle"></i> Add Country to Watchlist</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-4 mb-2">
                             <button onclick="addToWatchlist()" class="btn w-100"
-                                style="background-color: #4fc3f7; color: #0f1117;">
+                                style="background-color: #4A4A4A; color: #0f1117;">
                                 <i class="bi bi-star-fill"></i> Add to Watchlist
                             </button>
                         </div>
@@ -47,7 +47,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-star"></i> My Watchlist</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-star"></i> My Watchlist</h5>
                 </div>
                 <div class="card-body" id="watchlistItems">
                     <p class="text-muted text-center" id="emptyMessage">Belum ada negara di watchlist. Tambahkan negara di atas!</p>
@@ -95,10 +95,10 @@ function renderWatchlist() {
     watchlist.forEach(item => {
         html += `
         <div class="col-md-4 mb-3" id="watch-${item.code}">
-            <div class="card" style="border: 1px solid #4fc3f7;">
+            <div class="card" style="border: 1px solid #4A4A4A;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h5 style="color: #4fc3f7;" class="mb-0">${item.name}</h5>
+                        <h5 style="color: #4A4A4A;" class="mb-0">${item.name}</h5>
                         <button onclick="removeFromWatchlist('${item.code}')" class="btn btn-sm btn-danger">
                             <i class="bi bi-trash"></i>
                         </button>
@@ -109,7 +109,7 @@ function renderWatchlist() {
                         <small class="text-muted ms-2">Loading risk data...</small>
                     </div>
                     <a href="/country/${item.code}" class="btn btn-sm mt-2 w-100"
-                        style="background-color: #252836; border: 1px solid #4fc3f7; color: #4fc3f7;">
+                        style="background-color: #252836; border: 1px solid #4A4A4A; color: #4A4A4A;">
                         <i class="bi bi-eye"></i> View Detail
                     </a>
                 </div>

@@ -7,7 +7,7 @@
     <!-- Header -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2 style="color: #4fc3f7;"><i class="bi bi-speedometer2"></i> Global Supply Chain Risk Dashboard</h2>
+            <h2 style="color: #4A4A4A;"><i class="bi bi-speedometer2"></i> Global Supply Chain Risk Dashboard</h2>
             <p class="text-muted">Real-time monitoring of global supply chain risks</p>
         </div>
     </div>
@@ -15,14 +15,14 @@
     <!-- Stat Cards -->
     <div class="row mb-4">
         <div class="col-md-3 mb-3">
-            <div class="card stat-card" style="border-left: 4px solid #4fc3f7;">
+            <div class="card stat-card" style="border-left: 4px solid #4A4A4A;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <p class="text-muted mb-1">Total Countries</p>
-                            <h3 style="color: #4fc3f7;">{{ $totalCountries }}</h3>
+                            <h3 style="color: #4A4A4A;">{{ $totalCountries }}</h3>
                         </div>
-                        <i class="bi bi-globe2" style="font-size: 2rem; color: #4fc3f7; opacity: 0.5;"></i>
+                        <i class="bi bi-globe2" style="font-size: 2rem; color: #4A4A4A; opacity: 0.5;"></i>
                     </div>
                 </div>
             </div>

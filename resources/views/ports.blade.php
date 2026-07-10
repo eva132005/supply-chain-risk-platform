@@ -7,7 +7,7 @@
     <!-- Header -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2 style="color: #4fc3f7;"><i class="bi bi-anchor"></i> Port Location Monitor</h2>
+            <h2 style="color: #4A4A4A;"><i class="bi bi-anchor"></i> Port Location Monitor</h2>
             <p class="text-muted">Global port and airport locations with interactive map</p>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-map"></i> Global Port Map</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-map"></i> Global Port Map</h5>
                 </div>
                 <div class="card-body p-0">
                     <div id="map" style="height: 450px; border-radius: 0 0 12px 12px;"></div>
@@ -41,7 +41,7 @@
                                 style="background-color: #252836; border-color: #2a2d3e; color: #e0e0e0;">
                         </div>
                         <div class="col-md-2 mb-2">
-                            <button onclick="searchPorts()" class="btn w-100" style="background-color: #4fc3f7; color: #0f1117;">
+                            <button onclick="searchPorts()" class="btn w-100" style="background-color: #4A4A4A; color: #0f1117;">
                                 <i class="bi bi-search"></i> Cari
                             </button>
                         </div>
@@ -56,7 +56,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-list-ul"></i> Port List</h5>
+                    <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-list-ul"></i> Port List</h5>
                     <span class="text-muted">Total: {{ $ports->total() }} ports</span>
                 </div>
                 <div class="card-body p-0" id="portTableContainer">
@@ -95,7 +95,7 @@
 @push('styles')
 <style>
 .pagination .page-link { background-color: #252836; border-color: #2a2d3e; color: #e0e0e0; }
-.pagination .page-item.active .page-link { background-color: #4fc3f7; border-color: #4fc3f7; color: #0f1117; }
+.pagination .page-item.active .page-link { background-color: #4A4A4A; border-color: #4A4A4A; color: #0f1117; }
 </style>
 @endpush
 
@@ -115,7 +115,7 @@ fetch('/api/ports?search=')
             if (port.latitude && port.longitude) {
                 L.circleMarker([port.latitude, port.longitude], {
                     radius: 4,
-                    fillColor: '#4fc3f7',
+                    fillColor: '#4A4A4A',
                     color: '#fff',
                     weight: 1,
                     opacity: 1,

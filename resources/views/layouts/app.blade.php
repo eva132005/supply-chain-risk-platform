@@ -13,31 +13,50 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     
     <style>
-        body { background-color: #0f1117; color: #e0e0e0; }
-        .sidebar { background-color: #1a1d27; min-height: 100vh; width: 250px; position: fixed; left: 0; top: 0; z-index: 100; padding-top: 20px; }
+        body { background-color: #F5F5F0; color: #1E2D4C; }
+        .sidebar { background-color: #4A4A4A; min-height: 100vh; width: 250px; position: fixed; left: 0; top: 0; z-index: 100; padding-top: 20px; }
         .main-content { margin-left: 250px; padding: 20px; }
-        .navbar-brand { color: #4fc3f7 !important; font-weight: bold; font-size: 1rem; }
-        .nav-link { color: #9e9e9e !important; padding: 10px 20px; }
-        .nav-link:hover, .nav-link.active { color: #4fc3f7 !important; background-color: #252836; border-left: 3px solid #4fc3f7; }
-        .card { background-color: #1a1d27; border: 1px solid #2a2d3e; border-radius: 12px; }
-        .card-header { background-color: #252836; border-bottom: 1px solid #2a2d3e; }
-        .stat-card { border-radius: 12px; padding: 20px; }
-        .badge-low { background-color: #1b5e20; color: #a5d6a7; }
-        .badge-medium { background-color: #e65100; color: #ffcc80; }
-        .badge-high { background-color: #b71c1c; color: #ef9a9a; }
-        .table { color: #e0e0e0; }
-        .table thead th { background-color: #252836; border-color: #2a2d3e; }
-        .table td { border-color: #2a2d3e; }
+        .navbar-brand { color: #FFFFFF !important; font-weight: bold; font-size: 1rem; }
+        .nav-link { color: #E0E0E0 !important; padding: 10px 20px; }
+        .nav-link:hover, .nav-link.active { color: #FFFFFF !important; background-color: #606060; border-left: 3px solid #FFFFFF; }
+        .card { background-color: #FFFFFF; border: 1px solid #E8E8E3; border-radius: 16px; box-shadow: 0 2px 12px rgba(30,45,76,0.07); }
+        .card-header { background-color: #F0F0EB; border-bottom: 1px solid #E8E8E3; border-radius: 16px 16px 0 0 !important; }
+        .stat-card { border-radius: 16px; padding: 20px; }
+        .badge-low { background-color: #ACBDAA; color: #1E2D4C; }
+        .badge-medium { background-color: #e65100; color: #fff; }
+        .badge-high { background-color: #b71c1c; color: #fff; }
+        .table { color: #1E2D4C; }
+        .table thead th { background-color: #F0F0EB; border-color: #E8E8E3; color: #1E2D4C !important; }
+        .table td { border-color: #E8E8E3; color: #1E2D4C !important; }
+        .table-hover tbody tr:hover { background-color: #F5F5F0; }
         #map { height: 400px; border-radius: 12px; }
-        .risk-bar { height: 8px; border-radius: 4px; background-color: #2a2d3e; }
+        .risk-bar { height: 8px; border-radius: 4px; background-color: #E8E8E3; }
         .risk-bar-fill { height: 100%; border-radius: 4px; }
-        .card-body { color: #e0e0e0; }
-        .card p { color: #e0e0e0; }
-        h1, h2, h3, h4, h5, h6 { color: #e0e0e0; }
-        p { color: #e0e0e0; }
-        small { color: #9e9e9e; }
-        .text-muted { color: #9e9e9e !important; }
-        th, td { color: #e0e0e0 !important; }
+        .card-body { color: #1E2D4C; }
+        h1, h2, h3, h4, h5, h6 { color: #1E2D4C; }
+        p { color: #1E2D4C; }
+        small { color: #858585; }
+        .text-muted { color: #858585 !important; }
+        th, td { color: #1E2D4C !important; }
+        input::placeholder { color: #858585 !important; }
+        input:focus { background-color: #F0F0EB !important; color: #1E2D4C !important; box-shadow: none !important; border-color: #ACBDAA !important; }
+        select option { background-color: #FFFFFF; color: #1E2D4C; }
+        .form-select { color: #1E2D4C !important; background-color: #F0F0EB; border-color: #E8E8E3; }
+        label { color: #858585; }
+        .form-control { background-color: #F0F0EB; border-color: #E8E8E3; color: #1E2D4C; }
+        a { color: #1E2D4C; }
+        a:hover { color: #ACBDAA; }
+        .btn { border-radius: 10px; }
+        code { color: #1E2D4C; background-color: #F0F0EB; padding: 2px 6px; border-radius: 4px; }
+        /* Fix semua input & select inline style di semua halaman */
+        input[type="text"], input[type="search"], select, textarea {
+            background-color: #F0F0EB !important;
+            border-color: #E8E8E3 !important;
+            color: #1E2D4C !important;
+        }
+        input[type="text"]::placeholder, input[type="search"]::placeholder {
+            color: #858585 !important;
+        }
     </style>
 
     @stack('styles')

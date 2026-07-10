@@ -7,7 +7,7 @@
     <!-- Header -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2 style="color: #4fc3f7;"><i class="bi bi-bar-chart-line"></i> Country Comparison Engine</h2>
+            <h2 style="color: #4A4A4A;"><i class="bi bi-bar-chart-line"></i> Country Comparison Engine</h2>
             <p class="text-muted">Compare risk indicators between two countries</p>
         </div>
     </div>
@@ -29,7 +29,7 @@
                             </select>
                         </div>
                         <div class="col-md-2 text-center mb-2">
-                            <span style="color: #4fc3f7; font-size: 1.5rem; font-weight: bold;">VS</span>
+                            <span style="color: #4A4A4A; font-size: 1.5rem; font-weight: bold;">VS</span>
                         </div>
                         <div class="col-md-5 mb-2">
                             <label class="text-muted mb-1">Country B</label>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="text-center mt-3">
                         <button onclick="compareCountries()" class="btn px-5"
-                            style="background-color: #4fc3f7; color: #0f1117;">
+                            style="background-color: #4A4A4A; color: #0f1117;">
                             <i class="bi bi-arrow-left-right"></i> Compare
                         </button>
                     </div>
@@ -60,7 +60,7 @@
             <div class="col-md-6 mb-3">
                 <div class="card" id="cardA">
                     <div class="card-header text-center">
-                        <h4 style="color: #4fc3f7;" id="nameA">Country A</h4>
+                        <h4 style="color: #4A4A4A;" id="nameA">Country A</h4>
                     </div>
                     <div class="card-body" id="dataA"></div>
                 </div>
@@ -81,7 +81,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="mb-0" style="color: #4fc3f7;"><i class="bi bi-bar-chart"></i> Risk Score Comparison</h5>
+                        <h5 class="mb-0" style="color: #4A4A4A;"><i class="bi bi-bar-chart"></i> Risk Score Comparison</h5>
                     </div>
                     <div class="card-body">
                         <canvas id="comparisonChart" height="100"></canvas>
@@ -179,7 +179,7 @@ function renderChart(nameA, nameB, riskA, riskB) {
                     label: nameA,
                     data: riskA ? [riskA.weather_risk, riskA.inflation_risk, riskA.currency_risk, riskA.news_risk, riskA.total_risk] : [0,0,0,0,0],
                     backgroundColor: 'rgba(79, 195, 247, 0.7)',
-                    borderColor: '#4fc3f7',
+                    borderColor: '#4A4A4A',
                     borderWidth: 1
                 },
                 {
