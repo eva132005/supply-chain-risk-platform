@@ -48,7 +48,6 @@
         a:hover { color: #ACBDAA; }
         .btn { border-radius: 10px; }
         code { color: #1E2D4C; background-color: #F0F0EB; padding: 2px 6px; border-radius: 4px; }
-        /* Fix semua input & select inline style di semua halaman */
         input[type="text"], input[type="search"], select, textarea {
             background-color: #F0F0EB !important;
             border-color: #E8E8E3 !important;
@@ -67,7 +66,7 @@
         <div class="px-3 mb-4">
             <span class="navbar-brand">
                 <i class="bi bi-globe2"></i> SupplyChain<br>
-                <small style="color: #4fc3f7; font-size: 0.7rem;">Risk Intelligence Platform</small>
+                <small style="color: #ACBDAA; font-size: 0.7rem;">Risk Intelligence Platform</small>
             </span>
         </div>
         <nav>
@@ -77,6 +76,13 @@
                         <i class="bi bi-speedometer2 me-2"></i> Dashboard
                     </a>
                 </li>
+                @if(auth()->check() && auth()->user()->role == 'admin')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.*') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+                        <i class="bi bi-shield-lock me-2"></i> Admin Panel
+                    </a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('ports') ? 'active' : '' }}" href="{{ route('ports') }}">
                         <i class="bi bi-anchor me-2"></i> Port Monitor
@@ -93,19 +99,35 @@
                     </a>
                 </li>
                 <li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('visualization') ? 'active' : '' }}" href="{{ route('visualization') }}">
-        <i class="bi bi-graph-up me-2"></i> Data Visualization
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('watchlist') ? 'active' : '' }}" href="{{ route('watchlist') }}">
-        <i class="bi bi-star me-2"></i> Watchlist
-    </a>
-</li>
+                    <a class="nav-link {{ request()->routeIs('visualization') ? 'active' : '' }}" href="{{ route('visualization') }}">
+                        <i class="bi bi-graph-up me-2"></i> Data Visualization
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('watchlist') ? 'active' : '' }}" href="{{ route('watchlist') }}">
+                        <i class="bi bi-star me-2"></i> Watchlist
                     </a>
                 </li>
             </ul>
         </nav>
+
+        <!-- Logout -->
+        <div class="px-3 mt-4" style="position: absolute; bottom: 20px; width: 210px;">
+            @auth
+            <div class="mb-2" style="color: #E0E0E0; font-size: 0.85rem;">
+                <i class="bi bi-person-circle me-1"></i> {{ auth()->user()->name }}
+                <span class="badge bg-secondary ms-1" style="font-size: 0.7rem;">{{ auth()->user()->role }}</span>
+            </div>
+            @endauth
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+               class="btn w-100" style="background-color: #606060; color: #FFFFFF; border-radius: 10px;">
+                <i class="bi bi-box-arrow-right me-2"></i> Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </div>
     </div>
 
     <!-- Main Content -->
