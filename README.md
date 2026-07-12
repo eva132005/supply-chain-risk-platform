@@ -1,58 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+markdown# 🌐 Global Supply Chain Risk Intelligence Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Platform monitoring risiko rantai pasok global berbasis multi-API dan analitik data.
 
-## About Laravel
+## 📋 Deskripsi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem yang memantau risiko logistik global dengan mengintegrasikan data cuaca, ekonomi, kurs mata uang, berita, dan pelabuhan dari berbagai negara, kemudian menghitung **Risk Score** per negara menggunakan algoritma Weighted Risk Model.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Global Country Dashboard** — Pantau data 250+ negara
+- **Risk Scoring Engine** — Algoritma penilaian risiko (Weather + Inflation + Currency + News)
+- **Global Weather Monitoring** — Data cuaca real-time via Open-Meteo API
+- **Currency Impact Dashboard** — Kurs mata uang real-time dengan Chart.js
+- **News Intelligence** — Berita supply chain + Lexicon-based Sentiment Analysis
+- **Port Location Dashboard** — Peta 7698 pelabuhan global via Leaflet.js
+- **Data Visualization** — Grafik GDP, inflasi, kurs, dan risk trend
+- **Country Comparison Engine** — Bandingkan risiko antar negara
+- **Favorite Monitoring List** — Watchlist negara yang dipantau
+- **Admin Dashboard** — Kelola user, artikel, dan dataset pelabuhan
 
-## Learning Laravel
+## 🛠️ Teknologi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
+- PHP 8.3 + Laravel 11
+- MySQL
+- REST API (36 endpoints)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Frontend
+- Bootstrap 5
+- Chart.js
+- Leaflet.js
+- JavaScript ES6 + AJAX
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### API Eksternal
+| API | Data |
+|-----|------|
+| Open-Meteo | Cuaca global |
+| World Bank API | GDP, Inflasi, Populasi |
+| REST Countries (mledoze) | Data 250 negara |
+| ExchangeRate API | Kurs mata uang real-time |
+| NewsData.io | Berita ekonomi & logistik |
+| OpenFlights Dataset | 7698 data pelabuhan |
 
-## Agentic Development
+## 🗄️ Database
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+15+ tabel:
+- `users`, `countries`, `risk_scores`
+- `weather_data`, `economic_data`, `exchange_rates`
+- `news_cache`, `ports`, `watchlists`
+- `articles`, `positive_words`, `negative_words`
+- + tabel bawaan Laravel
+
+## 🧠 Risk Scoring Algorithm
+Risk Score = (Weather × 30%) + (Inflation × 20%) + (News × 40%) + (Currency × 10%)
+
+| Score | Level |
+|-------|-------|
+| 0-30 | Low Risk |
+| 31-60 | Medium Risk |
+| 61-100 | High Risk |
+
+## ⚙️ Instalasi
 
 ```bash
-composer require laravel/boost --dev
+# Clone repository
+git clone https://github.com/eva132005/supply-chain-risk-platform.git
+cd supply-chain-risk-platform
 
-php artisan boost:install
+# Install dependencies
+composer install
+npm install && npm run build
+
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Setup database
+php artisan migrate
+php artisan db:seed --class=SentimentWordSeeder
+
+# Sync data
+php artisan sync:countries
+php artisan sync:ports
+
+# Jalankan server
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 📡 REST API Endpoints (36 endpoints)
+GET  /api/countries
+GET  /api/countries/{code}
+GET  /api/countries/region/{region}
+GET  /api/countries/search/{query}
+GET  /api/countries/{code}/summary
+GET  /api/weather
+GET  /api/weather/{code}
+GET  /api/economic
+GET  /api/economic/{code}
+GET  /api/economic/top/gdp
+GET  /api/currency
+GET  /api/currency/{code}
+GET  /api/currency/compare/{codeA}/{codeB}
+GET  /api/news
+GET  /api/news/{code}
+GET  /api/news/sentiment/{sentiment}
+GET  /api/news/latest/{limit}
+GET  /api/ports
+GET  /api/ports/{id}
+GET  /api/ports/country/{code}
+GET  /api/ports/search/{query}
+GET  /api/risk
+GET  /api/risk/{code}
+POST /api/risk/calculate/{code}
+POST /api/risk/calculate-all
+GET  /api/risk/level/{level}
+GET  /api/risk/top/{limit}
+GET  /api/stats/overview
+GET  /api/stats/sentiment-summary
+GET  /api/stats/risk-summary
+GET  /api/stats/top-risk-countries
+... dan 5 endpoint lainnya
 
-## Contributing
+## 👤 Default Admin
+Email: siska@gmail.com
+Role: admin
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📁 Struktur Project
+app/
+├── Http/Controllers/
+│   ├── Api/          # REST API Controllers
+│   ├── Admin/        # Admin Controllers
+│   └── DashboardController.php
+├── Models/           # Eloquent Models
+├── Services/         # API Integration Services
+└── Console/Commands/ # Artisan Commands
 
-## Code of Conduct
+## 👩‍💻 Developer
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Nama:** Siska  
+**Project:** UAS Full Stack Web Development  
+**Stack:** Laravel + MySQL + Bootstrap + Chart.js + Leaflet.js
