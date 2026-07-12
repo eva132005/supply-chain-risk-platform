@@ -137,6 +137,6 @@ app/
 
 ## 👩‍💻 Developer
 
-**Nama:** Siska  
+**Nama:** EVA KHAIRANI HASIBUAN 
 **Project:** UAS Full Stack Web Development  
 **Stack:** Laravel + MySQL + Bootstrap + Chart.js + Leaflet.js
