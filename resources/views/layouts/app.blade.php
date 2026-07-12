@@ -64,10 +64,10 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="px-3 mb-4">
-            <span class="navbar-brand">
-                <i class="bi bi-globe2"></i> SupplyChain<br>
-                <small style="color: #ACBDAA; font-size: 0.7rem;">Risk Intelligence Platform</small>
-            </span>
+            <span class="navbar-brand" style="font-size: 0.85rem;">
+    <i class="bi bi-globe2"></i> Supply Chain<br>
+    <small style="color: #ACBDAA; font-size: 0.7rem;">Risk Intelligence Platform</small>
+</span>
         </div>
         <nav>
             <ul class="nav flex-column">
