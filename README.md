@@ -6,7 +6,7 @@ Platform monitoring risiko rantai pasok global berbasis multi-API dan analitik d
 
 Sistem yang memantau risiko logistik global dengan mengintegrasikan data cuaca, ekonomi, kurs mata uang, berita, dan pelabuhan dari berbagai negara, kemudian menghitung **Risk Score** per negara menggunakan algoritma Weighted Risk Model.
 
-## 🚀 Fitur Utama
+## 🚀 Fitur Utamanya
 
 - **Global Country Dashboard** — Pantau data 250+ negara
 - **Risk Scoring Engine** — Algoritma penilaian risiko (Weather + Inflation + Currency + News)
